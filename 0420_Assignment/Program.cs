@@ -26,7 +26,7 @@
             List<int> list2 = new List<int>() { 3, 2, 1 };
 
             Sort(list1);
-            //Sort(list2, (a, b) =>  a > b);
+            Sort(list2, (a, b) =>  a - b);
             foreach (int i in list1) Console.WriteLine(i);
             foreach (int i in list2) Console.WriteLine(i);
 
@@ -45,7 +45,7 @@
             if (list == null) throw new ArgumentNullException(nameof(list));
             for(int i = 0; i < list.Count; i++)
             {
-                for(int j = i; j < list.Count; j++)
+                for(int j = 0; j < list.Count-1; j++)
                 {
                     if (comparer(list[j], list[j+1]) > 0)
                     {
